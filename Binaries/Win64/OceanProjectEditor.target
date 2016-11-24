@@ -2,14 +2,14 @@
 	"TargetName" : "OceanProjectEditor",
 	"Platform" : "Win64",
 	"Configuration" : "Development",
-	"BuildId" : "86226abb-1506-46a3-9d36-eb1f59efc4ed",
+	"BuildId" : "378da4db-3c3b-43fc-9cf2-4ef5382f8589",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
 		"MinorVersion" : 15,
-		"PatchVersion" : 0,
-		"Changelist" : 3299760,
-		"CompatibleChangelist" : 0,
+		"PatchVersion" : 1,
+		"Changelist" : 3348071,
+		"CompatibleChangelist" : 3299760,
 		"IsLicenseeVersion" : 0,
 		"IsPromotedBuild" : 1,
 		"BranchName" : "++UE4+Release-4.15"
@@ -193,6 +193,10 @@
 		},
 		{
 			"Path" : "$(EngineDir)/Plugins/Runtime/ExampleDeviceProfileSelector/ExampleDeviceProfileSelector.uplugin",
+			"Type" : "UFS"
+		},
+		{
+			"Path" : "$(EngineDir)/Plugins/Runtime/GearVR/GearVR.uplugin",
 			"Type" : "UFS"
 		},
 		{

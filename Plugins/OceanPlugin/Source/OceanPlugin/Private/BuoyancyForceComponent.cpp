@@ -21,7 +21,6 @@
 #include "OceanPluginPrivatePCH.h"
 #include "BuoyancyForceComponent.h"
 #include "PhysicsEngine/ConstraintInstance.h"
-#include "PhysicsEngine/PhysicsConstraintComponent.h"
 
 UBuoyancyForceComponent::UBuoyancyForceComponent(const class FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer) 
@@ -304,13 +303,13 @@ void UBuoyancyForceComponent::ApplyUprightConstraint(UPrimitiveComponent* BasePr
 
 		//ConstraintInstance.LinearLimitSize = 0;
 
-		//ConstraintInstance.AngularSwing1Motion = EAngularConstraintMotion::ACM_Limited;
+		//ConstraintInstance.SetAngularSwing1Motion(EAngularConstraintMotion::ACM_Limited);
 		ConstraintInstance.SetAngularSwing2Motion(EAngularConstraintMotion::ACM_Limited);
 		ConstraintInstance.SetAngularTwistMotion(EAngularConstraintMotion::ACM_Limited);
 
 		ConstraintInstance.SetOrientationDriveTwistAndSwing(true, true);
 
-		//ConstraintInstance.Swing1LimitAngle = 0;
+		//ConstraintInstance.SetAngularSwing1Limit(EAngularConstraintMotion::ACM_Locked, 0);
 		ConstraintInstance.SetAngularSwing2Limit(EAngularConstraintMotion::ACM_Locked, 0);
 		ConstraintInstance.SetAngularTwistLimit(EAngularConstraintMotion::ACM_Locked, 0);
 

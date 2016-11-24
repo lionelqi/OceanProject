@@ -147,8 +147,8 @@ void UBuoyancyComponent::TickComponent(float DeltaTime, enum ELevelTick TickType
 	if (ClampMaxVelocity && PointsUnderWater > 0
 		&& UpdatedPrimitive->GetPhysicsLinearVelocity().Size() > MaxUnderwaterVelocity)
 	{
-		FVector	v = UpdatedPrimitive->GetPhysicsLinearVelocity().GetSafeNormal() * MaxUnderwaterVelocity;
-		UpdatedPrimitive->SetPhysicsLinearVelocity(v);
+		FVector	vVelocity = UpdatedPrimitive->GetPhysicsLinearVelocity().GetSafeNormal() * MaxUnderwaterVelocity;
+		UpdatedPrimitive->SetPhysicsLinearVelocity(vVelocity);
 	}
 
 	//Update damping based on number of underwater test points
@@ -188,7 +188,7 @@ void UBuoyancyComponent::ApplyUprightConstraint()
 
 		ConstraintInstance.SetOrientationDriveTwistAndSwing(true, true);
 
-		//ConstraintInstance.Swing1LimitAngle = 0;
+		//ConstraintInstance.SetAngularSwing1Limit(EAngularConstraintMotion::ACM_Locked, 0);
 		ConstraintInstance.SetAngularSwing2Limit(EAngularConstraintMotion::ACM_Locked, 0);
 		ConstraintInstance.SetAngularTwistLimit(EAngularConstraintMotion::ACM_Locked, 0);
 
